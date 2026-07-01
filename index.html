@@ -55,6 +55,7 @@ table { width: 100%; border-collapse: collapse; }
 thead th { background: #16469E; color: #fff; font-size: 10.6px; font-weight: bold;
            padding: 10px 10px; text-align: left; vertical-align: middle; }
 thead th.num { text-align: right; }
+thead th.ctr { text-align: center; }
 tbody td { padding: 9px 10px; border-bottom: 1px solid #e8edf4; }
 tbody td.num { text-align: right; }
 tbody td.charge { color: #1C63B0; }
@@ -220,7 +221,7 @@ function render(){
    '</div>'+
    '<div class="section">PAYMENT SCHEDULE</div>'+
    '<table><thead><tr><th>Charge Type</th><th>Tax Point</th><th>Period<br>From</th><th>Period To</th>'+
-   '<th class="num">'+netHeader+'</th><th class="num">VAT<br>Rate</th><th class="num">VAT (&pound;)</th><th class="num">Gross (&pound;)</th></tr></thead>'+
+   '<th class="ctr">'+netHeader+'</th><th class="ctr">VAT<br>Rate</th><th class="num">VAT (&pound;)</th><th class="num">Gross (&pound;)</th></tr></thead>'+
    '<tbody>'+rows+'</tbody></table>'+
    '<div class="notes"><p><b>Please retain this document.</b> This is your VAT invoice within the meaning of VAT regulations. If you are registered for VAT, you may be required to produce this schedule to HM Revenue &amp; Customs in support of any claims or deductions made in your VAT returns.</p>'+
    '<p><b>Payment terms.</b> Invoices are issued in advance and collected by BACS Direct Debit on the tax point date shown. No action is required where a valid Direct Debit instruction is in place.</p></div>'+
