@@ -163,6 +163,9 @@ function setMode(m){
   document.body.className=m;
   document.getElementById("mStd").classList.toggle("on",m==="standard");
   document.getElementById("mInt").classList.toggle("on",m==="interim");
+  var ch=document.getElementById("charge");
+  if(m==="interim" && (ch.value==="MONTHLY PAYMENT"||ch.value==="")) ch.value="INTERIM MONTH PAYMENT";
+  if(m==="standard" && (ch.value==="INTERIM MONTH PAYMENT"||ch.value==="")) ch.value="MONTHLY PAYMENT";
   render();
 }
 
@@ -229,7 +232,7 @@ function render(){
    '<div class="three">'+
      '<div class="col"><div class="h">CUSTOMER SERVICE</div><div class="r"><span class="k">Tel</span> 01634 540 453</div><div class="r"><span class="k">Email</span> support@paymentsave.co.uk</div><div class="r"><span class="k">Hours</span> Mon&ndash;Fri, 9:00&ndash;17:30</div></div>'+
      '<div class="col"><div class="h">MAILING ADDRESS</div><div class="r">Paymentsave (UK) Ltd</div><div class="r">Unit 7 Stanton Gate</div><div class="r">49 Mawney Road</div><div class="r">Romford, Essex, RM7 7HL</div><div class="r">United Kingdom</div></div>'+
-     '<div class="col"><div class="h">BILLING NOTES</div><div class="r"><span class="k">Method</span> BACS Direct Debit</div><div class="r"><span class="k">Frequency</span> Monthly, in advance</div><div class="r"><span class="k">VAT Reg.</span> 265371690</div></div>'+
+     '<div class="col"><div class="h">BILLING NOTES</div><div class="r"><span class="k">Method</span> BACS Direct Debit</div><div class="r"><span class="k">Frequency</span> '+(interim?"One-off, in advance":"Monthly, in advance")+'</div><div class="r"><span class="k">VAT Reg.</span> 265371690</div></div>'+
    '</div></div>'+
    '<div class="pfooter"><div class="cyan"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>Unit 7 Stanton Gate, 49 Mawney Road, Essex, RM7 7HL</div>'+
    '<div class="fseg fphone"><svg width="14" height="18" viewBox="0 0 20 26" fill="#fff"><rect x="3" y="1.5" width="14" height="23" rx="3"/><rect x="5" y="4" width="10" height="16.5" rx="1" fill="#001F5F"/><rect x="8" y="2.5" width="4" height="1" rx="0.5" fill="#001F5F"/></svg>01634 540 453</div>'+
