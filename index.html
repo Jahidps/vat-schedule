@@ -497,8 +497,8 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var n,r,i,a,
 
     <div class="standard-only">
       <label>Net (&pound;) &mdash; applied to every month</label>
-      <input id="net" value="17.99">
-      <div class="hint">Rows run monthly from the start-of-charge month to December. VAT (20%), Gross and Period To are calculated.</div>
+      <input id="net" placeholder="Net amount">
+      <div class="hint">The VAT schedule is created from this start date through to the end of the year (December). VAT is 20%; Gross and Period To are calculated.</div>
     </div>
 
     <div class="interim-only">
@@ -507,7 +507,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var n,r,i,a,
         <div><label>Period To</label><input type="date" id="ipto"></div>
       </div>
       <label>Gross (&pound;) &mdash; you enter this</label>
-      <input id="igross" value="20.20">
+      <input id="igross" placeholder="Gross amount">
       <div class="hint">Single row. Tax Point = Period From. VAT is always 20%; Net = Gross &divide; 1.20 and VAT = Gross &minus; Net.</div>
     </div>
 
@@ -653,9 +653,6 @@ async function download(modes,filename,btn){
 (function(){
   var t=new Date();
   document.getElementById("invdate").value=longDate(t);
-  document.getElementById("taxpoint").value="2026-07-15";
-  document.getElementById("ipfrom").value="2026-06-15";
-  document.getElementById("ipto").value="2026-07-14";
   document.getElementById("mStd").addEventListener("click",function(){setMode("standard");});
   document.getElementById("mInt").addEventListener("click",function(){setMode("interim");});
   document.getElementById("dlStd").addEventListener("click",function(){download(["standard"],fname(),this);});
